@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite parallel="false" name="Suite">
+  <test name="Test">
+    <classes>
+      <class name="Practice_Selenium.TestNG_Practice"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

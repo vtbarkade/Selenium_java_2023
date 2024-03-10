@@ -5,7 +5,7 @@ public class Count_no_of_words_32_new {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		String str = "  Hello   this	is  	my number	satara ";
+		String str = "  Hello   this	is  	my number vijay ";
 		
 		String strnew = str.trim();
 		System.out.println(strnew);

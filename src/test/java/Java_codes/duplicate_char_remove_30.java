@@ -9,6 +9,7 @@ public class duplicate_char_remove_30 {
 		char string[] = str.toCharArray();
 		System.out.print("String after Duplicate characters Removed is : ");
 		
+		
 		for(int i=0;i<str.length();i++)
 		{
 			int count=1;

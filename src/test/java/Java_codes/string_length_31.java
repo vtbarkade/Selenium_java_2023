@@ -6,6 +6,7 @@ public class string_length_31 {
 		// https://www.tutorialspoint.com/Java-string-length-without-using-length-method
 		
 		String str = "Vijay Barkade satara";
+		
 		int i=0;
 		for(char c:str.toCharArray())
 		{

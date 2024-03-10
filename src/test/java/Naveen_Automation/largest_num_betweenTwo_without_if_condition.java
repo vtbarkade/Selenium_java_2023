@@ -4,7 +4,7 @@ public class largest_num_betweenTwo_without_if_condition {
 
 	public static void main(String[] args) {
 
-		int a=36, b=25;
+		int a=16, b=25;
 		
 		int  largest= a>b?a:b;  //important syntax
 		

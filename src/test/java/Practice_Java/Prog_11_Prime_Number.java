@@ -4,7 +4,7 @@ public class Prog_11_Prime_Number {
 
 	public static void main(String[] args) {
 	
-		int num= 17, flag =0;
+		int num= 83, flag =0;
 		int m = num/2;
 		
 		for(int i=2;i<=m;i++)

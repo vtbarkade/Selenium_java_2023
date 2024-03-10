@@ -13,6 +13,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 
@@ -26,15 +28,20 @@ public class MakeMyTrip_booking_Task {
 	  WebDriver driver = new ChromeDriver();
 		
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	   	driver.get("https://www.makemytrip.com/");
-	   	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	   	
+	 		   	
 	   	JavascriptExecutor js =  (JavascriptExecutor)driver;
 	//  FileInputStream src = new FileInputStream("C:\\Users\\Nine\\eclipse-workspace\\Selenium_java_2023\\src\\test\\java\\config_Files\\config.properties");
 	  FileInputStream src = new FileInputStream(System.getProperty("user.dir")+"\\src\\test\\java\\config_Files\\config.properties"); 	
 	  Properties prop = new Properties();
 	   	prop.load(src);
 	   		   	
-		 		
+	   	driver.switchTo().frame("webklipper-publisher-widget-container-notification-frame");
+	 	WebElement pop_up=	driver.findElement(By.xpath("//i[@class='wewidgeticon we_close']"));
+	 	js.executeScript("arguments[0].click();", pop_up);
+	  
 	   driver.findElement(By.xpath("//span[text()='From']")).click();
 	   driver.findElement(By.xpath("//input[@placeholder='From']")).sendKeys(prop.getProperty("From"));
 				
@@ -67,6 +74,8 @@ public class MakeMyTrip_booking_Task {
 			js.executeScript("arguments[0].click();", upgrade);
 			
 			driver.switchTo().window(mainwindow);
+			
+			
 		  }
 	  }
 		//driver.quit();

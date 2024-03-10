@@ -14,8 +14,6 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-
 public class Lect_27_dropdown_windows_alert {
 WebDriver driver;
 WebDriverWait wait;
@@ -23,7 +21,7 @@ WebDriverWait wait;
 	@BeforeMethod
 	public void setup()
 	{
-		WebDriverManager.chromedriver().setup();
+		//WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -39,8 +37,7 @@ WebDriverWait wait;
 	
 	@Test()
 	public void Dropdown()
-	{
-		
+	{		
 		driver.get("https://testautomationpractice.blogspot.com/");
 		driver.findElement(By.xpath("//input[@id='Wikipedia1_wikipedia-search-input']")).sendKeys("selenium");
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
@@ -49,8 +46,7 @@ WebDriverWait wait;
 		for(WebElement link:links)
 		{
 			System.out.println(link.getText());
-			link.click();
-			
+			link.click();			
 		}
 		
 		Set<String> windows = driver.getWindowHandles();
@@ -58,8 +54,7 @@ WebDriverWait wait;
 		for(String window:windows)
 		{
 			String title = driver.switchTo().window(window).getTitle();
-			System.out.println(title);
-			
+			System.out.println(title);			
 		}		
 	}
 	
@@ -69,13 +64,11 @@ WebDriverWait wait;
 		driver.get("https://testautomationpractice.blogspot.com/");
 		
 		//driver.navigate().to("https://testautomationpractice.blogspot.com/");
-		driver.findElement(By.xpath("//button[text()='Click Me']")).click();
+		driver.findElement(By.xpath("//button[text()='Alert']")).click();
 		
 		System.out.println(wait.until(ExpectedConditions.alertIsPresent()).getText());
-		//System.out.println("Alert Text : "+driver.switchTo().alert().getText());
+		
 		driver.switchTo().alert().accept();
-		System.out.println(driver.findElement(By.xpath("//p[@id='demo']")).getText());
-		
-		
+				
 	}
 }

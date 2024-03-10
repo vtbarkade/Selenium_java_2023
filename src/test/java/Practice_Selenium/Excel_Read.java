@@ -20,6 +20,8 @@ public class Excel_Read {
 		int row_cnt = sheet.getLastRowNum(); //4
 		int cell_cnt = sheet.getRow(0).getLastCellNum();//4
 		
+		System.out.println(row_cnt+"  "+cell_cnt);
+		
 		for(int r=0;r<=row_cnt;r++)
 		{
 			XSSFRow current_row =sheet.getRow(r);
@@ -27,7 +29,7 @@ public class Excel_Read {
 			for(int c=0;c<cell_cnt;c++)
 			{
 				
-				System.out.print(current_row.getCell(c).toString() + "     ");
+				System.out.print(current_row.getCell(c).toString() + "\t");
 			}
 			System.out.println();
 		}
