@@ -1,6 +1,6 @@
 package Practice_Java;
 
-public class Practice_18_Toggle_Case_AgTP_to_aGtp {
+public class Prog_18_Toggle_Case_AgTP_to_aGtp {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
